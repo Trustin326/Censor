@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FemFlow Pro — Creative Female‑Focused No‑Compliance SaaS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#1ac6b3;
+  --bg2:#7a5cff;
+  --bg3:#ff7ad3;
+  --ink:#0b0b15;
+  --ink2:#2d2d42;
+  --white:#ffffff;
+  --gold:#f8d775;
+  --shadow:0 12px 40px rgba(0,0,0,.18);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at -10% -20%, rgba(255,122,211,.35), transparent 60%),
+    radial-gradient(900px 500px at 110% 0%, rgba(122,92,255,.35), transparent 55%),
+    linear-gradient(180deg, #fdfbff 0%, #f9fffd 60%, #ffffff 100%);
+}
+
+.container{ width:min(1120px, 92vw); margin:0 auto; }
+
+/* Hero */
+.hero{
+  padding:64px 0 28px;
+  text-align:center;
+}
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  color:#fff; font-weight:600; letter-spacing:.4px; font-size:12px;
+  box-shadow:var(--shadow);
+}
+h1{
+  margin:18px auto 14px;
+  font-family:'Playfair Display',serif;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height:1.05;
+  letter-spacing:.2px;
+  color:#0a0a12;
+}
+.sub{
+  font-size: clamp(16px, 2.4vw, 22px);
+  color:var(--ink2);
+  max-width:900px; margin:0 auto 22px;
+}
+.hero-cta{
+  display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:12px;
+}
+.btn{
+  border:none; cursor:pointer; padding:14px 22px; border-radius:14px;
+  font-weight:700; letter-spacing:.3px;
+  transition:.2s transform,.2s box-shadow,.2s opacity;
+  box-shadow:var(--shadow); text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(0); }
+.btn-primary{
+  background:linear-gradient(135deg,var(--bg2),var(--bg3));
+  color:#fff;
+}
+.btn-ghost{
+  background:#fff; color:#3b2a63; border:2px solid #e9e6ff;
+}
+.small{ font-size:13px; opacity:.85; font-weight:600; }
+.hero-card{
+  margin:36px auto 0; padding:18px; border-radius:var(--radius);
+  background:#fff; box-shadow:var(--shadow); max-width:980px;
+}
+
+/* Features grid */
+.section{ padding:48px 0; }
+.sec-title{
+  text-align:center; font-family:'Playfair Display',serif; font-size:clamp(28px,3.6vw,42px); margin:0 0 12px;
+}
+.sec-sub{ text-align:center; color:var(--ink2); margin:0 auto 30px; max-width:800px; }
+.features{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;
+}
+.card{
+  background:#fff; border-radius:16px; padding:18px;
+  box-shadow:var(--shadow); position:relative; overflow:hidden;
+}
+.card .tag{ position:absolute; top:14px; right:14px; background:linear-gradient(135deg,var(--bg1),var(--bg3)); color:#fff; padding:6px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.4px; }
+.card h3{ margin:6px 0 8px; font-size:18px; }
+.card p{ margin:0 0 10px; color:var(--ink2); font-size:14px; }
+.demo-area{ background:#fbfbff; border:1px dashed #e6e3ff; padding:10px; border-radius:12px; }
+.input, textarea, select{
+  width:100%; padding:12px 12px; border-radius:12px; border:1px solid #e9e6ff; outline:none;
+  font:inherit; background:#fff;
+}
+textarea{ min-height:92px; }
+.kicker{ font-size:12px; color:#6a5cff; font-weight:700; letter-spacing:.4px; margin-bottom:6px; }
+.output{ background:#0f1023; color:#fff; border-radius:12px; padding:12px; font-size:13px; white-space:pre-wrap; }
+
+/* Pricing */
+.pricing{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;
+}
+.price{
+  text-align:center;
+  background:conic-gradient(from 200deg at 50% 50%, #ffffff, #fcf8ff 30%, #fffbf5 60%, #ffffff 100%);
+}
+.price h3{ font-size:20px; margin:4px 0 2px; }
+.amount{ font-size:36px; font-weight:900; }
+ul.clean{ list-style:none; padding:0; margin:10px 0 0; }
+ul.clean li{ margin:8px 0; }
+.badge-gold{ background:linear-gradient(135deg,#ffe7a3,#ffd35b); color:#6b5200; }
+
+/* Widget box */
+.widget{
+  display:grid; grid-template-columns: 1.2fr .8fr; gap:16px;
+}
+.widget .code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:13px; background:#0f1023; color:#e7f6ff; padding:14px; border-radius:12px; box-shadow:var(--shadow);
+  overflow:auto;
+}
+.code .hl{ color:#7ee6ff; }
+.code .taghl{ color:#ffd973; }
+
+@media(max-width:900px){
+  .widget{ grid-template-columns:1fr; }
+}
+
+.footer{
+  padding:36px 0 64px; text-align:center; color:#5a5978; font-size:13px;
+}
+.logo{
+  display:inline-flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.8px; color:#3a2d62;
+}
+.logo i{ width:32px; height:32px; border-radius:10px; background:linear-gradient(135deg,var(--bg1),var(--bg3)); display:inline-block; box-shadow:var(--shadow); }
+hr.sep{ border:0; height:1px; background:linear-gradient(90deg,transparent,#eee,transparent); margin:26px 0; }
+</style>
+</head>
+<body>
+<header class="hero container">
+  <span class="badge">New • Rebrandable • Resell Rights</span>
+  <h1>FemFlow&nbsp;Pro — a Colorful, No‑Compliance SaaS for Creators & Coaches</h1>
+  <p class="sub">Tap any demo to try it live. FemFlow Pro helps you <b>ideate content</b>, <b>plan posts</b>, <b>craft emails</b>, <b>style your brand</b>, <b>price offers</b>, and <b>capture leads</b>—all client‑side, no external accounts required. <br>Perfect for female‑led brands. <b>Tap any pricing card to buy via WarriorPlus</b>.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#demos">Try All Live Demos</a>
+    <a class="btn btn-ghost" href="#pricing">Buy on WarriorPlus</a>
+  </div>
+  <div class="hero-card">
+    <div class="logo"><i></i><span>FemFlow Pro</span></div>
+    <p class="small">No‑server demo • 100% front‑end • Instant GitHub Pages friendly</p>
+  </div>
+</header>
+
+<main class="container">
+  <section id="demos" class="section">
+    <h2 class="sec-title">Live Feature Demos</h2>
+    <p class="sec-sub">Everything below runs locally in your browser—zero compliance headaches. Copy results with one click and use them anywhere.</p>
+    <div class="features">
+      <!-- 1. Tagline Generator -->
+      <div class="card">
+        <span class="tag">Copywriting</span>
+        <h3>AI‑Style Tagline Generator</h3>
+        <p>Describe your brand; get 5 punchy taglines.</p>
+        <div class="demo-area">
+          <div class="kicker">Input</div>
+          <input id="brand" class="input" placeholder="Ex: Luxe lashes studio for busy moms">
+          <button class="btn btn-primary" onclick="genTaglines()">Generate</button>
+          <div class="kicker" style="margin-top:10px">Output</div>
+          <div id="taglines" class="output"></div>
+          <button class="btn btn-ghost small" onclick="copyOut('taglines')">Copy</button>
+        </div>
+      </div>
+
+      <!-- 2. Social Planner -->
+      <div class="card">
+        <span class="tag">Planning</span>
+        <h3>7‑Day Social Post Planner</h3>
+        <p>Pick a theme; get a week of prompts (caption starters + hooks).</p>
+        <div class="demo-area">
+          <select id="theme" class="input">
+            <option value="beauty">Beauty / Self‑Care</option>
+            <option value="fitness">Fitness / Wellness</option>
+            <option value="food">Food / Recipes</option>
+            <option value="fashion">Fashion / Style</option>
+            <option value="coaching">Coaching / Mindset</option>
+          </select>
+          <button class="btn btn-primary" onclick="genPlanner()">Build Plan</button>
+          <div class="kicker" style="margin-top:10px">Plan</div>
+          <div id="planner" class="output"></div>
+          <button class="btn btn-ghost small" onclick="copyOut('planner')">Copy</button>
+        </div>
+      </div>
+
+      <!-- 3. Palette -->
+      <div class="card">
+        <span class="tag">Branding</span>
+        <h3>Brand Color Palette</h3>
+        <p>Generate a 5‑color palette from one seed color.</p>
+        <div class="demo-area">
+          <input type="color" id="seed" class="input" value="#7a5cff">
+          <button class="btn btn-primary" onclick="genPalette()">Create Palette</button>
+          <div id="palette" class="output"></div>
+        </div>
+      </div>
+
+      <!-- 4. Price Calculator -->
+      <div class="card">
+        <span class="tag">Offers</span>
+        <h3>Offer Pricing Helper</h3>
+        <p>Estimate price based on time, value, and deliverables.</p>
+        <div class="demo-area">
+          <input id="hrs" class="input" type="number" min="1" placeholder="Estimated hours">
+          <input id="rate" class="input" type="number" min="1" placeholder="Your target $/hr">
+          <input id="value" class="input" type="number" min="1" placeholder="Perceived client value ($)">
+          <button class="btn btn-primary" onclick="calcPrice()">Calculate</button>
+          <div id="priceOut" class="output"></div>
+        </div>
+      </div>
+
+      <!-- 5. Email Subject Maker -->
+      <div class="card">
+        <span class="tag">Email</span>
+        <h3>Subject Line Spark</h3>
+        <p>Give a topic; get 10 scroll‑stopping subject lines.</p>
+        <div class="demo-area">
+          <input id="topic" class="input" placeholder="Ex: Fall skincare routine">
+          <button class="btn btn-primary" onclick="genSubjects()">Generate</button>
+          <div id="subjects" class="output"></div>
+          <button class="btn btn-ghost small" onclick="copyOut('subjects')">Copy</button>
+        </div>
+      </div>
+
+      <!-- 6. Lead Magnet Maker -->
+      <div class="card">
+        <span class="tag">Leads</span>
+        <h3>Lead Magnet Ideas</h3>
+        <p>Describe your niche; get 6 high‑value lead magnet ideas.</p>
+        <div class="demo-area">
+          <input id="niche" class="input" placeholder="Ex: Bridal hair & makeup">
+          <button class="btn btn-primary" onclick="genMagnets()">Generate</button>
+          <div id="magnets" class="output"></div>
+          <button class="btn btn-ghost small" onclick="copyOut('magnets')">Copy</button>
+        </div>
+      </div>
+
+      <!-- 7. Mini Page Copy -->
+      <div class="card">
+        <span class="tag">Landing Copy</span>
+        <h3>Mini Landing Copy Blocks</h3>
+        <p>Create a hero, 3 benefits, and a CTA for your offer.</p>
+        <div class="demo-area">
+          <textarea id="offer" placeholder="Describe your offer in 1-2 sentences."></textarea>
+          <button class="btn btn-primary" onclick="genCopy()">Make Copy</button>
+          <div id="copyOut" class="output"></div>
+          <button class="btn btn-ghost small" onclick="copyOut('copyOut')">Copy</button>
+        </div>
+      </div>
+
+      <!-- 8. Simple Lead Capture (local only) -->
+      <div class="card">
+        <span class="tag">Capture</span>
+        <h3>Simple Lead Capture (Local Demo)</h3>
+        <p>Collect leads locally (not sent anywhere). Export JSON.</p>
+        <div class="demo-area">
+          <input id="leadName" class="input" placeholder="Name">
+          <input id="leadEmail" class="input" placeholder="Email">
+          <button class="btn btn-primary" onclick="saveLead()">Save Lead</button>
+          <button class="btn btn-ghost" onclick="exportLeads()">Export JSON</button>
+          <div id="leadCount" class="kicker">Saved leads: 0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <h2 class="sec-title">Pricing & WarriorPlus Buy Links</h2>
+    <p class="sec-sub">Choose your plan. Replace the placeholder URLs below with your live WarriorPlus checkout links.</p>
+    <div class="pricing">
+      <div class="card price">
+        <span class="tag">Starter</span>
+        <h3>Personal License</h3>
+        <div class="amount">$39</div>
+        <ul class="clean">
+          <li>Use FemFlow Pro for your own brand</li>
+          <li>All demos + widget</li>
+          <li>1 website</li>
+        </ul>
+        <a class="btn btn-primary" href="https://warriorplus.com/o/buy/SAMPLE_PERSONAL" target="_blank" rel="noopener">Buy on WarriorPlus</a>
+      </div>
+      <div class="card price" style="border:2px solid #ffe8a5">
+        <span class="tag badge-gold">Most Popular</span>
+        <h3>Reseller / MRR License</h3>
+        <div class="amount">$99</div>
+        <ul class="clean">
+          <li>Rebrand, sell, and keep the revenue</li>
+          <li>Includes license file + widget</li>
+          <li>Use on unlimited sites</li>
+        </ul>
+        <a class="btn btn-primary" href="https://warriorplus.com/o/buy/SAMPLE_RESELL" target="_blank" rel="noopener">Buy Resell Rights</a>
+      </div>
+      <div class="card price">
+        <span class="tag">Team</span>
+        <h3>Agency Bundle</h3>
+        <div class="amount">$199</div>
+        <ul class="clean">
+          <li>5 team seats</li>
+          <li>Client‑ready templates</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-primary" href="https://warriorplus.com/o/buy/SAMPLE_AGENCY" target="_blank" rel="noopener">Buy on WarriorPlus</a>
+      </div>
+    </div>
+    <p class="small" style="text-align:center;margin-top:10px;">After purchase, you’ll receive the ZIP and license files instantly.</p>
+  </section>
+
+  <section id="widget" class="section">
+    <h2 class="sec-title">Use FemFlow Pro as a Widget</h2>
+    <p class="sec-sub">Drop this on any site (GitHub Pages, Wix, Squarespace, WordPress, etc.). Copy the snippet or download the zip.</p>
+    <div class="widget">
+      <div>
+        <div class="card">
+          <div class="kicker">Embed Snippet</div>
+          <div class="code">
+&lt;<span class="taghl">div</span> id="<span class="hl">femflow-root</span>"&gt;&lt;/<span class="taghl">div</span>&gt;
+&lt;<span class="taghl">script</span> src="<span class="hl">./femflow-widget.js</span>" defer&gt;&lt;/<span class="taghl">script</span>&gt;
+          </div>
+          <p class="small">Place the snippet where you want the widget to appear. Upload <b>femflow-widget.js</b> alongside your page.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="kicker">Download</div>
+          <p>Get the standalone widget zip (JS + readme). Unzip, upload the files, and paste the snippet.</p>
+          <a class="btn btn-primary" href="FemFlowWidget.zip" download>Download Widget (.zip)</a>
+          <hr class="sep">
+          <div class="kicker">Resell Rights</div>
+          <p class="small">You may rebrand and resell with the Reseller/MRR license. No restricted niches or sensitive data. Pure front‑end utilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="sec-title">What Makes FemFlow Pro “No‑Compliance”?</h2>
+    <p class="sec-sub">FemFlow Pro runs entirely in the browser: no payments are processed here, no personal data is transmitted, and all demos are non‑medical, non‑financial, and non‑legal. You host it as static files. Replace buy buttons with your WarriorPlus checkout links.</p>
+    <div class="features">
+      <div class="card"><h3>Front‑End Only</h3><p>Static HTML/CSS/JS. Deploy on GitHub Pages in minutes.</p></div>
+      <div class="card"><h3>Data Control</h3><p>Lead demo stores locally in memory until you export the JSON.</p></div>
+      <div class="card"><h3>Rebrand Friendly</h3><p>Swap name, colors, and logo. Sell with MRR after purchase.</p></div>
+      <div class="card"><h3>Female‑First Design</h3><p>Playful gradients, elegant typography, and focus on creator workflows.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="logo"><i></i><span>FemFlow Pro</span></div>
+    <p>© <span id="year"></span> FemFlow Pro. Rebrand &amp; resell with the appropriate license. Not affiliated with WarriorPlus.</p>
+  </div>
+</footer>
+
+<script>
+// UTIL
+function copyOut(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText || el.textContent;
+  navigator.clipboard.writeText(txt);
+  alert('Copied to clipboard!');
+}
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+// 1. Taglines
+function genTaglines(){
+  const seed = (document.getElementById('brand').value || 'elevated beauty brand').trim();
+  const tones = ['bold','soft','luxury','playful','confident','glam'];
+  const templates = [
+    `{{seed}}. Time‑smart. Style‑rich.`,
+    `Glow further with {{seed}}.`,
+    `Beautifully done. Effortlessly you — {{seed}}.`,
+    `Your daily dose of elevated — {{seed}}.`,
+    `Own your moment with {{seed}}.`,
+    `Small rituals, big results — {{seed}}.`,
+    `From idea to income with {{seed}}.`,
+    `Because your time is gold — {{seed}}.`,
+  ];
+  const out = [];
+  for(let i=0;i<5;i++){
+    const t = pick(templates).replaceAll('{{seed}}', seed);
+    out.push('• ' + t);
+  }
+  document.getElementById('taglines').textContent = out.join('\n');
+}
+
+// 2. Planner
+function genPlanner(){
+  const theme = document.getElementById('theme').value;
+  const hooks = {
+    beauty:['Before/After','3 Mistakes','Morning Routine','Bag Essentials','Budget vs Bougie','Myth vs Truth','GRWM'],
+    fitness:['Mini Victory','5‑Minute Flow','Meal Prep','Form Fix','Weekend Reset','Habit Stack','Q&A'],
+    food:['Pantry Staples','1‑Pot Dinner','Sweet Treat','Meal Hack','Market Haul','Family Fave','Leftover Remix'],
+    fashion:['Capsule Pick','Style Rule','High/Low Look','Color Story','Accessorize','Shoe Talk','Occasion Fit'],
+    coaching:['Mindset Shift','Client Win','Framework','Prompt of Day','Storytime','Mini Lesson','Action Step']
+  };
+  const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const out = days.map((d,i)=>`${d}: ${pick(hooks[theme])} — caption: "${['Let’s do this','Quick tip','Try this','Steal my play','Bookmark this'][i%5]}…" `);
+  document.getElementById('planner').textContent = out.join('\n');
+}
+
+// 3. Palette
+function hexToHsl(H) {
+  let r = 0, g = 0, b = 0;
+  r = parseInt(H.substring(1,3),16) / 255;
+  g = parseInt(H.substring(3,5),16) / 255;
+  b = parseInt(H.substring(5,7),16) / 255;
+  const cmin = Math.min(r,g,b), cmax = Math.max(r,g,b), delta = cmax - cmin;
+  let h = 0, s = 0, l = 0;
+  if (delta == 0) h = 0;
+  else if (cmax == r) h = ((g - b) / delta) % 6;
+  else if (cmax == g) h = (b - r) / delta + 2;
+  else h = (r - g) / delta + 4;
+  h = Math.round(h * 60); if (h < 0) h += 360;
+  l = (cmax + cmin) / 2;
+  s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+  s = +(s * 100).toFixed(1); l = +(l * 100).toFixed(1);
+  return {h,s,l};
+}
+function hslToHex(h,s,l){
+  s/=100; l/=100;
+  const c=(1-Math.abs(2*l-1))*s;
+  const x=c*(1-Math.abs((h/60)%2-1));
+  const m=l-c/2;
+  let r=0,g=0,b=0;
+  if(0<=h&&h<60){r=c;g=x;b=0}
+  else if(60<=h&&h<120){r=x;g=c;b=0}
+  else if(120<=h&&h<180){r=0;g=c;b=x}
+  else if(180<=h&&h<240){r=0;g=x;b=c}
+  else if(240<=h&&h<300){r=x;g=0;b=c}
+  else{r=c;g=0;b=x}
+  const toHex=n=>('0'+Math.round((n+m)*255).toString(16)).slice(-2);
+  return '#'+toHex(r)+toHex(g)+toHex(b);
+}
+function genPalette(){
+  const seed = document.getElementById('seed').value || '#7a5cff';
+  const hsl = hexToHsl(seed);
+  const steps = [-25,-10,0,12,26];
+  const colors = steps.map(s => hslToHex((hsl.h+s+360)%360, Math.min(100,hsl.s+10), Math.min(90, Math.max(20, hsl.l + s/8))));
+  const html = colors.map(c=>`■ ${c}`).join('\n');
+  document.getElementById('palette').textContent = html;
+}
+
+// 4. Pricing helper
+function calcPrice(){
+  const h = parseFloat(document.getElementById('hrs').value||0);
+  const r = parseFloat(document.getElementById('rate').value||0);
+  const v = parseFloat(document.getElementById('value').value||0);
+  if(h<=0||r<=0||v<=0){ document.getElementById('priceOut').textContent='Please add hours, rate, and value.'; return; }
+  const base = h*r;
+  const valueFactor = Math.min(2.5, Math.max(1.0, v/(base||1)));
+  const rec = Math.round(base * 0.6 + base * 0.4 * valueFactor);
+  const tiers = [rec, Math.round(rec*1.25), Math.round(rec*1.6)];
+  document.getElementById('priceOut').textContent = `Suggested: $${rec}\nGood/Better/Best: $${tiers[0]} / $${tiers[1]} / $${tiers[2]}`;
+}
+
+// 5. Subjects
+function genSubjects(){
+  const topic = (document.getElementById('topic').value||'your fall routine').trim();
+  const patterns = [
+    `The 7‑minute ${topic} reset`,
+    `Do this before bed for ${topic}`,
+    `${topic}: my no‑overwhelm plan`,
+    `3 tiny tweaks for ${topic}`,
+    `What nobody tells you about ${topic}`,
+    `The lazy girl guide to ${topic}`,
+    `This changed my ${topic} forever`,
+    `Steal my ${topic} template`,
+    `Read this if you hate ${topic}`,
+    `You’re overthinking ${topic}`,
+  ];
+  document.getElementById('subjects').textContent = patterns.map(p=>'• '+p).join('\n');
+}
+
+// 6. Magnets
+function genMagnets(){
+  const niche = (document.getElementById('niche').value||'creative coaching').trim();
+  const ideas = [
+    `30‑Day ${niche} Content Calendar (Canva + PDF)`,
+    `${niche} Pricing Calculator (Google Sheet)`,
+    `${niche} Hooks & Headlines Pack (100 lines)`,
+    `${niche} Brand Color & Font Pairing Guide`,
+    `Quick Wins: 10 Micro‑Offers for ${niche}`,
+    `Swipe File: 25 Email Subject Lines for ${niche}`,
+  ];
+  document.getElementById('magnets').textContent = ideas.map(i=>'• '+i).join('\n');
+}
+
+// 7. Copy Blocks
+function genCopy(){
+  const offer = (document.getElementById('offer').value||'a done‑for‑you content system for busy creators').trim();
+  const hero = `Turn ideas into income with ${offer}.`;
+  const benefits = [
+    'Plan a week of posts in minutes.',
+    'Write headlines & emails without a blank page.',
+    'Keep your look cohesive with instant palettes.'
+  ];
+  const cta = 'Start now — your future self will thank you.';
+  document.getElementById('copyOut').textContent = `Hero: ${hero}\nBenefits:\n• ${benefits.join('\n• ')}\nCTA: ${cta}`;
+}
+
+// 8. Lead capture (local demo)
+const leads = [];
+function saveLead(){
+  const n = (document.getElementById('leadName').value||'').trim();
+  const e = (document.getElementById('leadEmail').value||'').trim();
+  if(!n||!e){ alert('Add name and email'); return; }
+  leads.push({name:n,email:e, ts: new Date().toISOString()});
+  document.getElementById('leadCount').innerText = 'Saved leads: '+leads.length;
+  document.getElementById('leadName').value=''; document.getElementById('leadEmail').value='';
+}
+function exportLeads(){
+  const blob = new Blob([JSON.stringify(leads,null,2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href=url; a.download='femflow-leads.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 1500);
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
